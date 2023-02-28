@@ -1,0 +1,34 @@
+//write a c program to print count of prime numbers between the given range.
+#include<stdio.h>
+
+
+main()
+{
+	 int min, max, n, count=0, i, j;
+	
+	 /* Inputs */
+	 printf("Enter minimum number: ");
+	 scanf("%d", &min);
+	 printf("Enter maximum number: ");
+	 scanf("%d", &max);
+	 
+	 /* Generating and counting prime numbers */
+	 for(i=min; i<=max; i++)
+	 {
+		  n = 0;
+		  for(j=2; j <= i/2; j++)
+		  {
+			   if(i%j==0)
+			   {
+				    n=1;
+				    break;
+			   }
+		  }
+		  if(n==0 && i>=2)
+		  {
+		   	printf("%d ",i);
+		   	count++;
+		  }
+	 }
+	 printf("\n Prime Count = %d", count);
+}
